@@ -13,9 +13,7 @@ from .config import settings
 
 app = FastAPI()
 
-origins = [
-    "*"    
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -32,7 +30,7 @@ app.include_router(vote.router)
 
 @app.get("/")
 def root():
-    return {"message": "Hello world :D !"}
+    return {"message": "Hello world erm hi !!"}
 
 
 

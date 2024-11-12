@@ -14,7 +14,7 @@ class UserOut(BaseModel):
     created_at: datetime
     # ------
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class PostBase(BaseModel):
     title:str
@@ -31,14 +31,14 @@ class Post(PostBase):
     owner: UserOut
     # It works for me whithout this (posibly b/c of updated versions)
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class PostOut(BaseModel):
      Post: Post
      votes:int
 
      class Config:
-        orm_mode = True
+        from_attributes = True
 
 class UserCreate(BaseModel):
     email:EmailStr
